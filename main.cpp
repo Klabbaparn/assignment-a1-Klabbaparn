@@ -20,7 +20,6 @@ int main(int argc, const char *argv[])
     double *buffer = new double[count]; //Allocate a dynamic memory array
     f.clear();
     f.seekg(0); //Rewind the file
-    // fef
 
     if (!f.is_open())
     {
