@@ -24,11 +24,7 @@ int main(int argc, const char *argv[])
     if (!f.is_open())
     {
         std::cout << "File failed to open!" << std::endl; //fail-checking
-        return 0;
-    }
-    else if (f.is_open())
-    {
-        std::cout << "File is open" << std::endl; //Prints if file opens
+        exit(0);
     }
     int j = 0;
     while (f >> get)
