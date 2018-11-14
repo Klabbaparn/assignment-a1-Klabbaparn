@@ -1,1 +1,5 @@
 .vscode/*
+*.exe
+makefile
+*.7z
+gammalt/
