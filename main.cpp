@@ -20,13 +20,13 @@ int main(int argc, const char *argv[])
 
     while (f >> stringOfNumbers)
     {
-        if (countOfChar(stringOfNumbers, '.') > 1)
+        if (countOfChar(stringOfNumbers, '.') > 1) //Check if string doesn't contain more than 1 dot.
             continue;
-        if (countOfChar(stringOfNumbers, '-') > 1)
+        if (countOfChar(stringOfNumbers, '-') > 1) //Check if string doesn't contain more than one subtraction
             continue;
-        if (countOfChar(stringOfNumbers, '+') > 1)
+        if (countOfChar(stringOfNumbers, '+') > 1) //Checks if string doesn't contain more than one addition
             continue;
-        if (!hasValidChars(stringOfNumbers))
+        if (!hasValidChars(stringOfNumbers)) //Checks if string is numbers
         {
             std::cout << "File is corrupt" << std::endl;
             return (EXIT_FAILURE);
