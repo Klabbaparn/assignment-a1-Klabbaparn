@@ -20,22 +20,15 @@ int main(int argc, const char *argv[])
 
     while (f >> stringOfNumbers)
     {
-        if (countOfChar(stringOfNumbers, '.') > 1) //Check if string doesn't contain more than 1 dot.
-            continue;
-        if (countOfChar(stringOfNumbers, '-') > 1) //Check if string doesn't contain more than one subtraction
-            continue;
-        if (countOfChar(stringOfNumbers, '+') > 1) //Checks if string doesn't contain more than one addition
-            continue;
-        if (!hasValidChars(stringOfNumbers)) //Checks if string is numbers
+        if (countOfChar(stringOfNumbers, '.') > 1 || //Check if string doesn't contain more than 1 dot.
+            countOfChar(stringOfNumbers, '-') > 1 || //Check if string doesn't contain more than one subtraction
+            countOfChar(stringOfNumbers, '+') > 1 || //Checks if string doesn't contain more than one addition
+            !hasValidChars(stringOfNumbers)) //Checks that the strings only contains numbers
         {
             std::cout << "File is corrupt" << std::endl;
-            return (EXIT_FAILURE);
+            return EXIT_FAILURE;
         }
-        else
-        {
-            count++;
-            continue;
-        }
+        count++;
     }
 
     double *arrayOfNumbers = new double[count]; //Allocate a dynamic memory array
@@ -53,7 +46,7 @@ int main(int argc, const char *argv[])
         sum += get;                   // Get the sum of the integers
         get = (int)(get * 1000 + .5); //rounding
         get = (get / 1000);           // convert into 3 decimals
-        arrayOfNumbers[j] = get;              // Insert integers into array
+        arrayOfNumbers[j] = get;      // Insert integers into array
         j++;
     }
     f.close();                      //Close file
