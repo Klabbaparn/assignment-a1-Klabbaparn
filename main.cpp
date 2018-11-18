@@ -17,7 +17,11 @@ int main(int argc, const char *argv[])
     int count = 0;
     std::string stringOfNumbers;
     std::ifstream f(argv[1]);
-
+    if (!f.is_open())
+    {
+        std::cout << "File failed to open!" << std::endl; //fail-checking
+        exit(EXIT_FAILURE);
+    }
     while (f >> stringOfNumbers)
     {
         if (countOfChar(stringOfNumbers, '.') > 1 || //Check if string doesn't contain more than 1 dot.
@@ -30,29 +34,23 @@ int main(int argc, const char *argv[])
         }
         count++;
     }
-
     double *arrayOfNumbers = new double[count]; //Allocate a dynamic memory array
     f.clear();
     f.seekg(0); //Rewind the file
 
-    if (!f.is_open())
-    {
-        std::cout << "File failed to open!" << std::endl; //fail-checking
-        exit(EXIT_FAILURE);
-    }
     int j = 0;
     while (f >> get)
     {
         sum += get;                   // Get the sum of the integers
-        get = (int)(get * 1000 + .5); //rounding
+        get = (int)(get * 1000 + .5); // Rounding
         get = (get / 1000);           // convert into 3 decimals
-        arrayOfNumbers[j] = get;      // Insert integers into array
+        arrayOfNumbers[j] = get;      // Insert numbers into array
         j++;
     }
     f.close();                      //Close file
     for (int k = 0; k < count; k++) //Loop and prints the numbers that are above average
         if (arrayOfNumbers[k] > (sum / count))
             std::cout << arrayOfNumbers[k] << " ";
-    delete[] arrayOfNumbers; //Delete buffer to prevent memory leakage
+    delete[] arrayOfNumbers; //Delete buffer to prevent memory leakage khkihjhj
     return 0;
 }
