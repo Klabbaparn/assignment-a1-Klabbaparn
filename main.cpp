@@ -41,7 +41,7 @@ int main(int argc, const char *argv[])
     int j = 0;
     while (f >> get)
     {
-        sum += get;                   // Get the sum of the integers
+        sum += get;                   // Get the sum
         get = (int)(get * 1000 + .5); // Rounding
         get = (get / 1000);           // convert into 3 decimals
         arrayOfNumbers[j] = get;      // Insert numbers into array
