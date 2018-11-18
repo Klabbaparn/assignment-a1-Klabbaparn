@@ -5,7 +5,7 @@
 bool hasValidChars(std::string s)
 {
     for (int i = 0; i < s.length(); i++) {
-        if (!isdigit(s[i]) && s[i] != '.' && s[i] != '-' && s[i] != '+')
+        if (!isdigit(s[i]) && s[i] != '.')
             return false;
     }
     return true;
