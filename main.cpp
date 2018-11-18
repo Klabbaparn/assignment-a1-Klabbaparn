@@ -27,7 +27,7 @@ int main(int argc, const char *argv[])
         if (countOfChar(stringOfNumbers, '.') > 1 || //Check if string doesn't contain more than 1 dot.
             countOfChar(stringOfNumbers, '-') > 1 || //Check if string doesn't contain more than one subtraction
             countOfChar(stringOfNumbers, '+') > 1 || //Checks if string doesn't contain more than one addition
-            !hasValidChars(stringOfNumbers)) //Checks that the strings only contains numbers
+            !hasValidChars(stringOfNumbers))         //Checks that the strings only contains numbers
         {
             std::cout << "File is corrupt" << std::endl;
             return EXIT_FAILURE;
@@ -51,6 +51,6 @@ int main(int argc, const char *argv[])
     for (int k = 0; k < count; k++) //Loop and prints the numbers that are above average
         if (arrayOfNumbers[k] > (sum / count))
             std::cout << arrayOfNumbers[k] << " ";
-    delete[] arrayOfNumbers; //Delete buffer to prevent memory leakage khkihjhj
+    delete[] arrayOfNumbers; //Delete buffer to prevent memory leakage
     return 0;
 }
