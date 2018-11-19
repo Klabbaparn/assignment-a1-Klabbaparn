@@ -43,10 +43,13 @@ int main(int argc, const char *argv[])
     int j = 0;
     while (f >> get)
     {
-        sum += get;                   // Get the sum
-        get = (int)(get * 1000 + .5); // Rounding
-        get = (get / 1000);           // convert into 3 decimals
-        arrayOfNumbers[j] = get;      // Insert integers into array
+        sum += get;
+        if (get > 0) // Get the sum
+            get = (int)(get * 1000 + .5);//Rounding
+        else if (get < 0)
+            get = (int)(get * 1000 - .5);//Rounding
+        get = (get / 1000);      // convert into 3 decimals
+        arrayOfNumbers[j] = get; // Insert integers into array
         j++;
     }
     f.close();                      //Close file
