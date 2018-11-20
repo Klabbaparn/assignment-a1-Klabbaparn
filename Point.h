@@ -4,7 +4,7 @@
 
 class Point: public Shape{
   public:
-    double Point(double x, double y) : m_x(x), m_y(y) {}
+    Point(double x, double y) : m_x(x), m_y(y) {}
     double getX() const { return m_x; }
     double getY() const { return m_y; }
 
