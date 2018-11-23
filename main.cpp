@@ -50,7 +50,7 @@ int main(int argc, const char *argv[])
             get = (int)(get * 1000 - .5);//Rounding
         get = (get / 1000);      // convert into 3 decimals
         arrayOfNumbers[j] = get; // Insert integers into array
-        j++; //testing
+        j++; 
     }
     f.close();                      //Close file
     for (int k = 0; k < count; k++) //Loop and prints the numbers that are above average
