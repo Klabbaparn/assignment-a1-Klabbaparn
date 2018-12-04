@@ -44,18 +44,19 @@ int main(int argc, const char *argv[])
     while (f >> get)
     {
         sum += get;
-        if (get > 0) // Get the sum
-            get = (int)(get * 1000 + .5);//Rounding
+        if (get > 0) 
+            get = (int)(get * 1000 + .5);
         else if (get < 0)
-            get = (int)(get * 1000 - .5);//Rounding
-        get = (get / 1000);      // convert into 3 decimals
-        arrayOfNumbers[j] = get; // Insert integers into array
+            get = (int)(get * 1000 - .5);
+        get = (get / 1000);      
+        arrayOfNumbers[j] = get; 
         j++; 
     }
     f.close();                      //Close file
-    for (int k = 0; k < count; k++) //Loop and prints the numbers that are above average
+    
+    for (int k = 0; k < count; k++) 
         if (arrayOfNumbers[k] > (sum / count))
             std::cout << arrayOfNumbers[k] << " ";
-    delete[] arrayOfNumbers; //Delete buffer to prevent memory leakage
+    delete[] arrayOfNumbers; 
     return 0;
 }
