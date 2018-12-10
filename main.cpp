@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cmath>
 #include <string>
-#include "Functions.cpp"
+#include "Functions.h"
 
 int main(int argc, const char *argv[])
 {

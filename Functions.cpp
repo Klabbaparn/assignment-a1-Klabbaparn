@@ -1,6 +1,5 @@
 #include "Functions.h"
 #include <iostream>
-#include <string>
 
 bool hasValidChars(std::string s)
 {
